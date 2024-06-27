@@ -1,0 +1,34 @@
+Host *
+    IdentityAgent ~/.1password/agent.sock
+
+### GitHub Config ###
+# Personal account
+Host github.com
+    HostName ssh.github.com
+    User git
+    Port 443
+    PreferredAuthentications publickey
+	
+# Work account
+Host github.work
+    HostName ssh.github.com
+    User git
+    Port 443
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_ed25519_work.pub
+
+### GitLab Config ###
+# Personal account
+Host gitlab.com
+    HostName altssh.gitlab.com
+    User git
+    Port 443
+    PreferredAuthentications publickey
+
+# Work account
+Host gitlab.work
+    HostName altssh.gitlab.com
+    User git
+    Port 443
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_ed25519_work.pub
