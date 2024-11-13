@@ -4,6 +4,9 @@
 [gpg]
     format = ssh
 
+[gpg "ssh"]
+  program = "/opt/1Password/op-ssh-sign"
+
 [commit]
     gpgsign = true
 
@@ -16,7 +19,10 @@
     diffFilter = delta --color-only --features=interactive
 
 [delta]
+    navigate = true	# use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
     features = decorations
+    side-by-side = true
 
 [delta "interactive"]
     keep-plus-minus-markers = false
@@ -29,3 +35,6 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
+
+[merge]
+    conflictstyle = zdiff3
