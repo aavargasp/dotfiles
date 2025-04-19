@@ -5,7 +5,7 @@
     format = ssh
 
 [gpg "ssh"]
-  program = "/opt/1Password/op-ssh-sign"
+  program = /opt/1Password/op-ssh-sign
 
 [commit]
     gpgsign = true
@@ -35,6 +35,3 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
-
-[merge]
-    conflictstyle = zdiff3

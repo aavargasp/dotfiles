@@ -15,7 +15,6 @@ Host github.work
     User git
     Port 443
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519_work.pub
 
 ### GitLab Config ###
 # Personal account
@@ -31,4 +30,3 @@ Host gitlab.work
     User git
     Port 443
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519_work.pub
