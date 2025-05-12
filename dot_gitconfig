@@ -1,5 +1,6 @@
 [core]
     pager = delta
+	editor = nano
 
 [gpg]
     format = ssh
@@ -14,6 +15,9 @@
     name = Andres Vargas
     email = avargasp87@gmail.com
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFSB94sfW1YFM093USLJFOS9PLJhZN2KSMfyGbPg3kQd
+
+[includeif "gitdir:~/Develop/esmax/"]
+  path = ~/Develop/esmax/.gitconfig
 
 [interactive]
     diffFilter = delta --color-only --features=interactive
