@@ -1,0 +1,7 @@
+[user]
+	name = Andres Vargas
+	email = avargasp87@gmail.com
+[pull]
+	rebase = false
+[push]
+	default = simple
