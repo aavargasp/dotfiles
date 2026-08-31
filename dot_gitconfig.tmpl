@@ -10,6 +10,7 @@
 	default = simple
 [core]
 	editor = nano
+	pager = delta
 [gpg]
 	format = ssh
 [gpg "ssh"]
@@ -21,3 +22,13 @@
 	allowedSignersFile = {{ .chezmoi.homeDir }}/.ssh/allowed_signers
 [commit]
 	gpgsign = true
+[delta]
+	navigate = true
+	line-numbers = true
+    features = catppuccin-mocha
+[interactive]
+	diffFilter = delta --color-only
+[merge]
+	conflictstyle = zdiff3
+[include]
+    path = ~/.config/git/catppuccin.gitconfig
