@@ -1,0 +1,9 @@
+{
+        "theme": "Adaptive.sublime-theme",
+        "color_scheme": "Catppuccin/Catppuccin Mocha.sublime-color-scheme",
+        "font_face": "JetBrainsMono NF",
+        "ignored_packages":
+        [
+                "Vintage",
+        ],
+}
