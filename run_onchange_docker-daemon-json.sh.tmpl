@@ -1,0 +1,24 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+set -eufo pipefail
+
+echo "Configuring Docker log driver (json-file -> local)..."
+
+sudo mkdir -p /etc/docker
+
+sudo tee /etc/docker/daemon.json > /dev/null <<'EOF'
+{
+    "log-driver": "local",
+    "log-opts": {
+        "max-size": "10m",
+        "max-file": "3"
+    }
+}
+EOF
+
+echo "Restarting docker.service to apply..."
+sudo systemctl restart docker.service
+
+echo "Done. Current logging driver:"
+docker info | grep -i "logging driver"
+{{- end -}}
