@@ -102,3 +102,15 @@ hl.window_rule({
     },
     no_focus = true,
 })
+
+-- Logitech action wheel
+hl.window_rule({
+    match    = { class = "^(openlogi-action-ring)$" },
+    float    = true,
+    decorate = false,
+    no_blur  = true,
+    move     = {
+        "max(0, min(cursor_x - window_w/2, monitor_w - window_w))",
+        "max(0, min(cursor_y - window_h/2, monitor_h - window_h))",
+    },
+})
