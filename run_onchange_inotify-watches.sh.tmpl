@@ -1,0 +1,15 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+set -eufo pipefail
+
+echo "Raising fs.inotify.max_user_watches..."
+
+sudo tee /etc/sysctl.d/99-inotify-watches.conf > /dev/null <<'EOF'
+fs.inotify.max_user_watches=4194304
+EOF
+
+sudo sysctl --system
+
+echo "Done. Current value:"
+sysctl fs.inotify.max_user_watches
+{{- end -}}
